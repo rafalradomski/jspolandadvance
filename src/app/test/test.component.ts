@@ -34,17 +34,5 @@ export class TestComponent implements OnInit {
         this.container.createComponent(cf);
     }
 
-    /* constructor(){
-        console.log(this.entry);
-    }*/
-
-
-  /* constructor(compiler: Compiler,
-              injector: Injector,
-              module: NgModuleRef<AppModule>) {
-      const m = compiler.compileModuleAndAllComponentsSync(DynamicModule);
-      //console.log(m.componentFactories[0].create(injector));
-      const c = m.componentFactories[0].create(injector, null, null, module);
-    console.log(c); */
 
 }

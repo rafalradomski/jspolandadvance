@@ -1,4 +1,4 @@
-import {Directive, ViewContainerRef, ComponentFactoryResolver, HostListener} from '@angular/core';
+import {Directive, ViewContainerRef, ComponentFactoryResolver, HostListener, Input} from '@angular/core';
 import {TestComponent} from "../test/test.component";
 
 @Directive({
@@ -15,10 +15,13 @@ export class TooltipDirective {
       this.crf = crf;
   }
 
+  @Input() appTooltip: string;
+
   @HostListener('click')
   public showTooltip(){
     const cf = this.crf.resolveComponentFactory(TestComponent);
-    this.entry.createComponent(cf);
+    const toolTip = this.entry.createComponent(cf);
+    toolTip.instance.text = this.appTooltip;
   }
 
 }
